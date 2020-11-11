@@ -3,37 +3,22 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-from flask import (
-    Flask,
-    render_template,
-    jsonify,
-    request,
-    redirect)
+from flask import Flask, jsonify, render_template
 
 postgres = 'postgres'
 password = 'FuzzyRug5x7'
 
 #################################################
-# Flask Setup
-#################################################
-app = Flask(__name__)
-
-#################################################
 # Database Setup
 #################################################
-from flask_sqlalchemy import SQLAlchemy
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///db.sqlite"
-
-# # Remove tracking modifications
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# db = SQLAlchemy(app)
-
-# Pet = create_classes(db)
 engine = create_engine(
     f"postgres://{postgres}:{password}@localhost:5432/Project_2")
 conn = engine.connect()
 
+#################################################
+# Flask Setup
+#################################################
+app = Flask(__name__)
 
 #################################################
 # Flask Routes
