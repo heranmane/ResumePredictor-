@@ -218,10 +218,10 @@ function changejobType(jobtype) {
         .text(`Salary by Job Type `)
       
       
-      // chart.exit()
-      //   .transition()
-      //   .delay()
-      //   .remove();
+      chart.exit()
+        .transition()
+        .delay()
+        .remove();
 
     })
 
@@ -300,3 +300,4 @@ d3.json("./Job_Type").then(function (importedData) {
 //   .catch(function (error) {
 //   console.log(error);
 // });
+
