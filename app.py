@@ -5,8 +5,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify, render_template
 
-postgres = 'postgres'
-password = ''
+postgres = 'williammdavis'
+password = 'FuzzyRug5x7'
 
 #################################################
 # Database Setup
