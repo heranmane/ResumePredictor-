@@ -238,9 +238,7 @@ var data = [{
   type: 'pie',
   textinfo: "label+percent",
   textposition: "outside",
-  automargin: true,
-  marker: { colors: ['rgb(242, 227, 146)','rgb(8, 103, 136)','rgb(219, 191, 27)','rgb(7, 160, 195)',  'rgb(237, 198, 91)','rgb(6, 88, 134)'],
-            width: [3,3,3,3,3,3] }
+  automargin: true
 }];
 var layout = {
   height: 400,
@@ -267,18 +265,14 @@ function getData() {
   var data = {
     y: filteredData.map(item => parseInt(item.Count)),
     x: filteredData.map(item => item.Skill),
-    type: "bar",
-    marker:{color: 'rgb(219, 191, 27)'}
+    type: "bar"
   }
   console.log(data)
 
   var layout = {
     title: "'Bar' Chart",
-    height: 400,
-    width: 700,
-    paper_bgcolor: "#00000000",
-    plot_bgcolor: "#00000000",
-    font: { color: "#FFFFFF" }
+    height: 600,
+    width: 600
   };
 
   Plotly.newPlot("plot", [data], layout);

@@ -5,8 +5,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify, render_template
 
-postgres = 'williammdavis'
-password = 'FuzzyRug5x7'
+postgres = 'postgres'
+password = ''
 
 #################################################
 # Database Setup
@@ -19,7 +19,6 @@ conn = engine.connect()
 #################################################
 app = Flask(__name__)
 
-# Pet = create_classes(db)
 #################################################
 # Flask Routes
 #################################################
@@ -80,7 +79,7 @@ def heran():
     # session = Session(engine)
 
     # Query all data
-    results2 = pd.read_sql("SELECT * FROM indeed", conn)
+    results2 = pd.read_sql("SELECT * FROM new_indeed", conn)
 
     heran = results2.to_dict(orient='records')
     # session.close()
