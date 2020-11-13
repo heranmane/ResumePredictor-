@@ -225,9 +225,9 @@ function changejobType(jobtype) {
 
     })
 
-    .catch(function (error) {
-      console.log(error);
-    });
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
 }
 
 
@@ -296,6 +296,7 @@ d3.json("./Job_Type").then(function (importedData) {
 
 
 
-}).catch(function (error) {
-  console.log(error);
-});
+})
+//   .catch(function (error) {
+//   console.log(error);
+// });
