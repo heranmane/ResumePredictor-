@@ -1,0 +1,31 @@
+Job_Type,Skill,Count
+Engineer,sql,1067
+Engineer,python,901
+Engineer,machine learning,289
+Engineer,r,228
+Engineer,hadoop,761
+Engineer,spark,719
+Engineer,java,738
+Engineer,tableau,214
+Engineer,datamining,70
+Engineer,hive,444
+Analyst,sql,1090
+Analyst,python,512
+Analyst,machine learning,166
+Analyst,r,456
+Analyst,hadoop,126
+Analyst,spark,67
+Analyst,java,158
+Analyst,tableau,538
+Analyst,datamining,256
+Analyst,hive,80
+Scientist,sql,1322
+Scientist,python,1912
+Scientist,machine learning,1842
+Scientist,r,1550
+Scientist,hadoop,827
+Scientist,spark,745
+Scientist,java,742
+Scientist,tableau,484
+Scientist,datamining,733
+Scientist,hive,442

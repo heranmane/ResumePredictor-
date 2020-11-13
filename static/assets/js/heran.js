@@ -43,6 +43,7 @@ function changejobType(jobtype) {
 
   d3.json("./heran")
     .then(function (raw_importedData) {
+      console.log(raw_importedData)
       var chart = svg.append('g')
         .attr('transform', `translate(${margin}, ${margin})`);
 
@@ -185,13 +186,13 @@ function changejobType(jobtype) {
           chart.selectAll('.divergence').remove()
         })
 
-      // barGroups
-      //   .append('text')
-      //   .attr('class', 'value')
-      //   .attr('x', (a) => xScale(a.key) + xScale.bandwidth() / 2)
-      //   .attr('y', (a) => yScale(a.value) + 20)
-      //   .attr('text-anchor', 'middle')
-      //   .text((a) => `${a.value}%`)
+      barGroups
+        .append('text')
+        .attr('class', 'value')
+        .attr('x', (a) => xScale(a.key) + xScale.bandwidth() / 2)
+        .attr('y', (a) => yScale(a.value) + 20)
+        .attr('text-anchor', 'middle')
+        .text((a) => `${a.value}%`)
 
       svg
         .append('text')
