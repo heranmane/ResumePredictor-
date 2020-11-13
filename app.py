@@ -37,22 +37,22 @@ def welcome():
     # )
 
 
-@app.route("/indeed")
-def indeed():
-    # # Create our session (link) from Python to the DB
-    # session = Session(engine)
+# @app.route("/indeed")
+# def indeed():
+#     # # Create our session (link) from Python to the DB
+#     # session = Session(engine)
 
-    # Query all data
-    results = pd.read_sql("SELECT * FROM indeed", conn)
+#     # Query all data
+#     results = pd.read_sql("SELECT * FROM indeed", conn)
 
-    P2 = results.to_dict(orient='records')
-    # session.close()
+#     P2 = results.to_dict(orient='records')
+#     # session.close()
 
-    # # Convert list of tuples into normal list
-    # all_names = list(np.ravel(results))
+#     # # Convert list of tuples into normal list
+#     # all_names = list(np.ravel(results))
 
-    # return jsonify(all_names)
-    return jsonify(P2)
+#     # return jsonify(all_names)
+#     return jsonify(P2)
 
 
 @app.route("/Job_Type")
