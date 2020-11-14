@@ -233,7 +233,7 @@ function changejobType(jobtype) {
 // ``````````````````````````PIE``````````````````````````
 var data = [{
   values: [13, 11.3, 8.3, 5.6, 3.9, 57.9],
-  labels: ['Consulting and Business Services', 'Internet and Softrware', 'Banks and Financial Services', 'Health Care',
+  labels: ['Consulting and Business Services', 'Internet and Software', 'Banks and Financial Services', 'Health Care',
     'Insurance', 'Other Industries'],
   type: 'pie',
   textinfo: "label+percent",

@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: "Montserrat";
   src: url("fonts/Montserrat-Black.eot");
@@ -344,12 +345,12 @@ body {
   font-weight: 700;
   text-transform: uppercase;
 }
-.device-notification--message {
+/* .device-notification--message {
   width: 70%;
   margin: 30px 0 0 0;
   font-weight: 700;
   text-align: center;
-}
+} */
 @media (max-width: 767px) and (min-width: 601px) and (max-height: 680px) {
   .device-notification {
     display: -webkit-box;
