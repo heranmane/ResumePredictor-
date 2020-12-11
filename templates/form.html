@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>IwanttoData</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="HTML5 website template">
+    <meta name="keywords" content="global, template, html, sass, jquery">
+    <meta name="author" content="Bucky Maler">
+    <link rel="stylesheet" href="../static/assets/css/main.css">
+    <link rel="stylesheet" href="../static/assets/css/modal-video.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../static/assets/js/functions-min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        var jQuery13 = jQuery.noConflict();
+    </script>
+    <script src="../static/assets/js/jquery.svg3dtagcloud.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext" rel='stylesheet' type='text/css'>
+
+<body>
+    <!-- <div class="container"> -->
+    <div class="container">
+        <div class="row">
+            <div class="outer-nav--return"></div>
+            <div id="m-viewport" class="l-viewports">
+                <div class="l-wrapper2">
+                    <header class="header">
+                        <a class="header--logo" href="#0">
+                            <img src="../static/assets/img/settings.png" alt="Global">
+                            <p>GW Bootcamp</p>
+                        </a>
+                        <!-- <button class="header--cta cta">Hire Us</button> -->
+                        <div class="header--nav-toggle">
+                            <span></span>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron" style="text-align: center">
+            <h1>Find Your Data Job Calling</h1>
+            <!-- <p>Enter your Resume below!</p> -->
+
+            <div class="row">
+                <div class="col-md-6 ">
+                    <form method="POST" action="/send" role="form" , name="resume">
+                        <div class="form-group">
+                            <!-- <label class="inputName">Resume</label> -->
+                            <input type="text" class="text" name="resumeName" placeholder="Enter Your Resume Here">
+
+                            <!-- <button type="submit"><i class="fa fa-resumeName"></i></button> -->
+                            <!-- <button type="submit" class="glow-on-hover" style=color:gold type="button" ;width:150px;
+                                    height:40px; > </button> -->
+                            <!-- <button type="submit" class="glow-on-hover" style=color:gold type="button" ;width:150px; -->
+                                <!-- height:40px; > -->
+                                <!-- submit</button> -->
+                            <output name="resumeName" class="card-text">{{prediction}}</output>
+                        </div>
+                    </form>
+                    <br>
+                    <br>
+                    {{prediction_text}}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="l-section section section--is-active">
+
+        <div class="intro">
+            <div class="intro--banner">
+                <!-- <h1>So you want<br>to explore</br>Data Analysis?</h1> -->
+                <img class="gif2" src="../static/assets/img/pic3.gif">
+                <img src="../static/assets/img/introduction-visual.png" alt="Welcome">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -79,7 +79,7 @@ def heran():
     # session = Session(engine)
 
     # Query all data
-    results2 = pd.read_sql("SELECT * FROM new_indeed", conn)
+    results2 = pd.read_sql("SELECT * FROM final", conn)
 
     heran = results2.to_dict(orient='records')
     # session.close()

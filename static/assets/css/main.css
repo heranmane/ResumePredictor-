@@ -251,6 +251,15 @@ body {
   box-shadow: 0 0 45px 5px rgba(0, 0, 0, 0.85);
   overflow: hidden;
 }
+.l-viewports{
+    background: linear-gradient(90deg, rgba(2,0,31,1) 0%, rgba(3,3,71,1) 57%, rgba(27,52,128,1) 100%);
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    box-shadow: 0 0 45px 5px rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+    margin: 0 auto;
+}
 .l-wrapper {
   position: relative;
   width: 1440px;
@@ -258,6 +267,13 @@ body {
   height: 100%;
   margin: 0 auto;
 }
+.l-wrapper2 {
+  position: relative;
+  width: 1440px;
+  max-width: 90%;
+  height: 10px;
+  margin: 0 auto;
+}  
 .l-side-nav {
   position: absolute;
   left: 0;
@@ -548,7 +564,7 @@ body {
   position: relative;
   top: -5px;
   color: #fff;
-  font-size: 6px;
+  font-size: 15px;
   cursor: pointer;
 }
 .side-nav > li span {
@@ -556,10 +572,17 @@ body {
   top: 3px;
   left: 10px;
   color: #fff;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
+}
+.section--is-active {
+  position: relative;
+  top: -5px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
 }
 .side-nav > li::before {
   position: absolute;
@@ -569,25 +592,26 @@ body {
   font-size: 14px;
   font-weight: 300;
 }
-.side-nav li:nth-child(1)::before {
-  content: "01";
+.side-nav li:nth-child(Home)::before {
+  content: "Home";
+
 }
-.side-nav li:nth-child(2)::before {
-  content: "02";
+.side-nav li:nth-child(Job Type)::before {
+  content: "Job Type";
 }
-.side-nav li:nth-child(3)::before {
-  content: "03";
+.side-nav li:nth-child(Salary)::before {
+  content: "Salary";
 }
-.side-nav li:nth-child(4)::before {
-  content: "04";
+.side-nav li:nth-child(Industry)::before {
+  content: "Industry";
 }
-.side-nav li:nth-child(5)::before {
-  content: "05";
+.side-nav li:nth-child(Languages)::before {
+  content: "Language";
 }
-.side-nav li:nth-child(6)::before {
-  content: "06";
+.side-nav li:nth-child(Key Terms)::before {
+  content: "Key Term";
 }
-.side-nav li:nth-child(7)::before {
+.side-nav li:nth-child(The Team)::before {
   content: "07";
 }
 .side-nav li:nth-child(8)::before {
@@ -603,6 +627,8 @@ body {
   visibility: visible;
   -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
+  font-size: 14px;
+
 }
 .side-nav li.is-active::before {
   left: -33px;
@@ -615,7 +641,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 900px;
-  max-width: 75%;
+  max-width:75%;
   height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -636,6 +662,7 @@ body {
 .intro--banner {
   position: relative;
   height: 475px;
+  background-position: cen;
 }
 .intro--banner::before {
   content: "";
@@ -652,6 +679,7 @@ body {
   font-weight: 900;
   line-height: 1;
   z-index: 1;
+  right: -50px;
 }
 .intro--banner button {
   position: relative;
@@ -691,7 +719,22 @@ body {
 }
 .intro--banner img.gif {
   position: absolute;
-  left: 25px;
+  right: 552px;
+  max-width: 100%;
+  height: 260px;
+  width: auto;
+}
+.intro--banner img.gif2 {
+  position: absolute;
+  right: 552px;
+  max-width: 100%;
+  height: 260px;
+  width: auto;
+  right: 620px
+}
+.header1{
+  position: absolute;
+  right: 560px;
   max-width: 100%;
   height: 260px;
   width: auto;
@@ -1790,7 +1833,7 @@ body {
 }
 
 .glow-on-hover:active {
-    background: red
+    background: goldenrod
 }
 
 .glow-on-hover:active:after {
@@ -1824,4 +1867,20 @@ body {
   align-items:center;
   background-position: center;
   text-align: justify;
+}
+.btn-default{
+background-color: black;
+}
+.userinput{
+  background-color: black;
+}
+.inputName{
+  color: gold;
+}
+.form-control{
+  background-color: black;
+}
+.text {
+  background: gold;
+  color: #000;
 }
