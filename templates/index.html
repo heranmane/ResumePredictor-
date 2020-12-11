@@ -41,7 +41,7 @@
       <div id="viewport" class="l-viewport">
         <div class="l-wrapper">
           <header class="header">
-            <a class="header--logo" href="#0">
+            <a class="header--logo">
               <img src="../static/assets/img/settings.png" alt="Global">
               <p>GW Bootcamp</p>
             </a>
@@ -52,27 +52,25 @@
           </header>
           <nav class="l-side-nav">
             <ul class="side-nav">
-              <li class="section--is-active" span>Home</span></li>
-              <li class="section--is-active" span>Job Type</span></li>
-              <li class="section--is-active" span>Salary</span></li>
-              <li class="section--is-active" span>Industry</span></li>
-                <li class="section--is-active" span>Languages</span></li>
-
-              <li class="section--is-active" span>Key Terms</span></li>
-              <li class="section--is-active" span>The Team</span></li>
+              <li class="is-active"><span>Home</span></li>
+              <li><span>Difference</span></li>
+              <li><span>Salary</span></li>
+              <li><span>Industry</span></li>
+              <li><span>Skills</span></li>
+              <li><span>Word Globe</span></li>
+              <li><span>The Team</span></li>
             </ul>
           </nav>
           <ul class="l-main-content main-content">
             <li class="l-section section section--is-active">
               <div class="intro">
                 <div class="intro--banner">
-                  <h1 class="header1">So you want<br>to explore</br>Data Analysis?</h1>
+                  <h1>So you want<br>to explore</br>Data Analysis?</h1>
                   <img class="gif" src="../static/assets/img/pic3.gif">
                   <img src="../static/assets/img/introduction-visual.png" alt="Welcome">
                 </div>
                 <div class="intro--options">
-                  <p>Welcome to our page! Scroll down to learn more about data job listings!</p>
-                  <a href="/send">Add your resume here!</a>
+                  <p>Welcome to our page! Scroll down to learn more about data job listings.</p>
                 </div>
               </div>
             </li>
@@ -172,7 +170,7 @@
             </li>
             <li class="l-section section">
               <div class="hire">
-                <h2>What Type of Data Job is Right for You?</h2>
+                <h2>What Skills Do You Need?</h2>
                 <select id="Dropdown11">
                   <option value="Engineer">Engineer</option>
                   <option value="Analyst">Analyst</option>
@@ -191,482 +189,22 @@
 
                 </p>
               </div>
-
               <script src="../static/assets/js/heran.js"></script>
             </li>
             <li class="l-section section">
               <div class="hire">
-                <h2>Most Common Terms Per Job Type</h2>
-                <style type='text/css'>
-                  html,
-                  body,
-                  div,
-                  span,
-                  applet,
-                  object,
-                  iframe,
-                  h1,
-                  h2,
-                  h3,
-                  h4,
-                  h5,
-                  h6,
-                  p,
-                  blockquote,
-                  pre,
-                  a,
-                  abbr,
-                  acronym,
-                  address,
-                  big,
-                  cite,
-                  code,
-                  del,
-                  dfn,
-                  em,
-                  font,
-                  img,
-                  ins,
-                  kbd,
-                  q,
-                  s,
-                  samp,
-                  small,
-                  strike,
-                  strong,
-                  sub,
-                  sup,
-                  tt,
-                  var,
-                  b,
-                  u,
-                  i,
-                  center,
-                  dl,
-                  dt,
-                  dd,
-                  ol,
-                  ul,
-                  li,
-                  fieldset,
-                  form,
-                  label,
-                  legend,
-                  table,
-                  caption,
-                  tbody,
-                  tfoot,
-                  thead,
-                  tr,
-                  th,
-                  td {
-                    margin: 0;
-                    padding: 0;
-                    border: 0;
-                    outline: 0;
-                    font-size: 100%;
-                    vertical-align: baseline;
-                    background: transparent;
-                    box-sizing: border-box;
-                  }
-                </style>
-
-                <script>
-
-                  jQuery13(document).ready(function () {
-
-                    var entries = [
-
-                      { label: 'DATA', url: '#', target: '_top' },
-                      { label: 'Business', url: '#', target: '_top' },
-                      { label: 'Experience', url: '#', target: '_top' },
-                      { label: 'Analysis', url: '#', target: '_top' },
-                      { label: 'Analytics', url: '#', target: '_top' },
-                      { label: 'Management', url: '#', target: '_top' },
-                      { label: 'Team', url: '#/', target: '_top' },
-                      { label: 'Skills', url: '#', target: '_top' },
-                      { label: 'Ability', url: '#', target: '_top' },
-                      { label: 'Support', url: '#', target: '_top' },
-                      { label: 'Information', url: '#', target: '_top' },
-                      { label: 'Knowledge', url: '#', target: '_top' },
-                      { label: 'Reports', url: '#', target: '_top' },
-                      { label: 'Tools', url: '#', target: '_top' },
-                      { label: 'Development', url: '#', target: '_top' },
-                      { label: 'Sql', url: '#', target: '_top' },
-                      { label: 'Marketing', url: '#', target: '_top' },
-                      { label: 'Communication', url: '#', target: '_top' },
-                      { label: 'Product', url: '#', target: '_top' },
-                      { label: 'Computer Science', url: '#', target: '_top' },
-                      { label: 'Data Management', url: '#', target: '_top' },
-                      { label: 'Business Intelligence', url: '#', target: '_top' },
-                      { label: 'Analytical', url: '#', target: '_top' },
-                      { label: 'Analyst', url: '#', target: '_top' },
-                      { label: 'Develop', url: 'h#', target: '_top' },
-                      { label: 'Complex', url: '#', target: '_top' },
-                      { label: 'Data analyst', url: '#', target: '_top' },
-                      { label: 'Data Quality', url: '#', target: '_top' },
-
-                    ];
-
-                    var settings = {
-
-                      entries: entries,
-                      width: 300,
-                      height: 300,
-                      radius: '65%',
-                      radiusMin: 75,
-                      bgDraw: true,
-                      bgColor: 'transparent',
-                      opacityOver: 1.00,
-                      opacityOut: 0.05,
-                      opacitySpeed: 6,
-                      fov: 800,
-                      speed: 0.55,
-                      fontFamily: 'Oswald, Arial, sans-serif',
-                      fontSize: '15',
-                      fontColor: '#FFFFFF',
-                      fontWeight: 'normal',//bold
-                      fontStyle: 'normal',//italic 
-                      fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                      fontToUpperCase: true,
-                      tooltipFontFamily: 'Oswald, Arial, sans-serif',
-                      tooltipFontSize: '11',
-                      tooltipFontColor: '#fff',
-                      tooltipFontWeight: 'normal',//bold
-                      tooltipFontStyle: 'normal',//italic 
-                      tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                      tooltipFontToUpperCase: false,
-                      tooltipTextAnchor: 'left',
-                      tooltipDiffX: 0,
-                      tooltipDiffY: 10
-
-                    };
-
-                    //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
-                    jQuery13('#analyst').svg3DTagCloud(settings);
-
-                  });
-
-
-                </script>
-                <style type='text/css'>
-                  html,
-                  body,
-                  div,
-                  span,
-                  applet,
-                  object,
-                  iframe,
-                  h1,
-                  h2,
-                  h3,
-                  h4,
-                  h5,
-                  h6,
-                  p,
-                  blockquote,
-                  pre,
-                  a,
-                  abbr,
-                  acronym,
-                  address,
-                  big,
-                  cite,
-                  code,
-                  del,
-                  dfn,
-                  em,
-                  font,
-                  img,
-                  ins,
-                  kbd,
-                  q,
-                  s,
-                  samp,
-                  small,
-                  strike,
-                  strong,
-                  sub,
-                  sup,
-                  tt,
-                  var,
-                  b,
-                  u,
-                  i,
-                  center,
-                  dl,
-                  dt,
-                  dd,
-                  ol,
-                  ul,
-                  li,
-                  fieldset,
-                  form,
-                  label,
-                  legend,
-                  table,
-                  caption,
-                  tbody,
-                  tfoot,
-                  thead,
-                  tr,
-                  th,
-                  td {
-                    margin: 0;
-                    padding: 0;
-                    border: 0;
-                    outline: 0;
-                    font-size: 100%;
-                    vertical-align: baseline;
-                    background: transparent;
-                    box-sizing: border-box;
-                  }
-                </style>
-
-                <script>
-
-                  jQuery13(document).ready(function () {
-
-                    var entries = [
-
-                      { label: 'DATA', url: '#', target: '_top' },
-                      { label: 'Business', url: '#', target: '_top' },
-                      { label: 'Experience', url: '#', target: '_top' },
-                      { label: 'Solutions', url: '#', target: '_top' },
-                      { label: 'Analytics', url: '#', target: '_top' },
-                      { label: 'Management', url: '#', target: '_top' },
-                      { label: 'Team', url: '#/', target: '_top' },
-                      { label: 'Engineering', url: '#', target: '_top' },
-                      { label: 'Design', url: '#', target: '_top' },
-                      { label: 'Support', url: '#', target: '_top' },
-                      { label: 'Technologies', url: '#', target: '_top' },
-                      { label: 'Knowledge', url: '#', target: '_top' },
-                      { label: 'Science', url: '#', target: '_top' },
-                      { label: 'Tools', url: '#', target: '_top' },
-                      { label: 'Development', url: '#', target: '_top' },
-                      { label: 'Sql', url: '#', target: '_top' },
-                      { label: 'Marketing', url: '#', target: '_top' },
-                      { label: 'Software', url: '#', target: '_top' },
-                      { label: 'Systems', url: '#', target: '_top' },
-                      { label: 'Building', url: '#', target: '_top' },
-                      { label: 'Data Management', url: '#', target: '_top' },
-                      { label: 'Cloud', url: '#', target: '_top' },
-                      { label: 'Python', url: '#', target: '_top' },
-                      { label: 'Degree Computer Science', url: '#', target: '_top' },
-                      { label: 'Machine Learning', url: 'h#', target: '_top' },
-                      { label: 'Data Engineering', url: '#', target: '_top' },
-                      { label: 'Build', url: '#', target: '_top' },
-                      { label: 'Services', url: '#', target: '_top' },
-
-                    ];
-
-                    var settings = {
-
-                      entries: entries,
-                      width: 300,
-                      height: 300,
-                      radius: '65%',
-                      radiusMin: 75,
-                      bgDraw: true,
-                      bgColor: 'transparent',
-                      opacityOver: 1.00,
-                      opacityOut: 0.05,
-                      opacitySpeed: 6,
-                      fov: 800,
-                      speed: 0.55,
-                      fontFamily: 'Oswald, Arial, sans-serif',
-                      fontSize: '15',
-                      fontColor: '#FFFFFF',
-                      fontWeight: 'normal',//bold
-                      fontStyle: 'normal',//italic 
-                      fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                      fontToUpperCase: true,
-                      tooltipFontFamily: 'Oswald, Arial, sans-serif',
-                      tooltipFontSize: '11',
-                      tooltipFontColor: '#fff',
-                      tooltipFontWeight: 'normal',//bold
-                      tooltipFontStyle: 'normal',//italic 
-                      tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                      tooltipFontToUpperCase: false,
-                      tooltipTextAnchor: 'left',
-                      tooltipDiffX: 0,
-                      tooltipDiffY: 10
-
-                    };
-
-                    //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
-                    jQuery13('#engineer').svg3DTagCloud(settings);
-
-                  });
-
-
-                </script>
-
-                </script>
-                <style type='text/css'>
-                  html,
-                  body,
-                  div,
-                  span,
-                  applet,
-                  object,
-                  iframe,
-                  h1,
-                  h2,
-                  h3,
-                  h4,
-                  h5,
-                  h6,
-                  p,
-                  blockquote,
-                  pre,
-                  a,
-                  abbr,
-                  acronym,
-                  address,
-                  big,
-                  cite,
-                  code,
-                  del,
-                  dfn,
-                  em,
-                  font,
-                  img,
-                  ins,
-                  kbd,
-                  q,
-                  s,
-                  samp,
-                  small,
-                  strike,
-                  strong,
-                  sub,
-                  sup,
-                  tt,
-                  var,
-                  b,
-                  u,
-                  i,
-                  center,
-                  dl,
-                  dt,
-                  dd,
-                  ol,
-                  ul,
-                  li,
-                  fieldset,
-                  form,
-                  label,
-                  legend,
-                  table,
-                  caption,
-                  tbody,
-                  tfoot,
-                  thead,
-                  tr,
-                  th,
-                  td {
-                    margin: 0;
-                    padding: 0;
-                    border: 0;
-                    outline: 0;
-                    font-size: 100%;
-                    vertical-align: baseline;
-                    background: transparent;
-                    box-sizing: border-box;
-                  }
-                </style>
-
-                <script>
-
-                  jQuery13(document).ready(function () {
-
-                    var entries = [
-
-                      { label: 'DATA', url: '#', target: '_top' },
-                      { label: 'Business', url: '#', target: '_top' },
-                      { label: 'Experience', url: '#', target: '_top' },
-                      { label: 'Learning', url: '#', target: '_top' },
-                      { label: 'Analytics', url: '#', target: '_top' },
-                      { label: 'Management', url: '#', target: '_top' },
-                      { label: 'Team', url: '#/', target: '_top' },
-                      { label: 'Engineering', url: '#', target: '_top' },
-                      { label: 'Science', url: '#', target: '_top' },
-                      { label: 'Statistical', url: '#', target: '_top' },
-                      { label: 'Models', url: '#', target: '_top' },
-                      { label: 'Knowledge', url: '#', target: '_top' },
-                      { label: 'Advanced', url: '#', target: '_top' },
-                      { label: 'Tools', url: '#', target: '_top' },
-                      { label: 'Development', url: '#', target: '_top' },
-                      { label: 'Solutions', url: '#', target: '_top' },
-                      { label: 'Research', url: '#', target: '_top' },
-                      { label: 'Statistics', url: '#', target: '_top' },
-                      { label: 'Modeling', url: '#', target: '_top' },
-                      { label: 'Algorithms', url: '#', target: '_top' },
-                      { label: 'Data Science', url: '#', target: '_top' },
-                      { label: 'Software', url: '#', target: '_top' },
-                      { label: 'Python', url: '#', target: '_top' },
-                      { label: 'Computer Science', url: '#', target: '_top' },
-                      { label: 'Machine Learning', url: 'h#', target: '_top' },
-                      { label: 'Deep Learning', url: '#', target: '_top' },
-                      { label: 'Natural Language Processing', url: '#', target: '_top' },
-                      { label: 'Data Mining', url: '#', target: '_top' },
-
-                    ];
-
-                    var settings = {
-
-                      entries: entries,
-                      width: 300,
-                      height: 300,
-                      radius: '65%',
-                      radiusMin: 75,
-                      bgDraw: true,
-                      bgColor: 'transparent',
-                      opacityOver: 1.00,
-                      opacityOut: 0.05,
-                      opacitySpeed: 6,
-                      fov: 800,
-                      speed: 0.5,
-                      fontFamily: 'Oswald, Arial, sans-serif',
-                      fontSize: '15',
-                      fontColor: '#FFFFFF',
-                      fontWeight: 'normal',//bold
-                      fontStyle: 'normal',//italic 
-                      fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                      fontToUpperCase: true,
-                      tooltipFontFamily: 'Oswald, Arial, sans-serif',
-                      tooltipFontSize: '11',
-                      tooltipFontColor: '#fff',
-                      tooltipFontWeight: 'normal',//bold
-                      tooltipFontStyle: 'normal',//italic 
-                      tooltipFontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
-                      tooltipFontToUpperCase: false,
-                      tooltipTextAnchor: 'left',
-                      tooltipDiffX: 0,
-                      tooltipDiffY: 10
-
-                    };
-
-                    //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
-                    jQuery13('#scientist').svg3DTagCloud(settings);
-
-                  });
-
-
-                </script>
-                <div class="nee">
-                <p>Data Analyst</p>
-                <p>Data Engineer</p>
-                <p>Data Scientist</p>
-              </div>
-                <div class="work">
+                <form action="{{ url_for('predict')}}" method = "POST">
+                  <textarea name="message" rows="6" cols="50" required="required" style="background-color: transparent;"></textarea>
+                  <br></br>
+                  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                
+                  <div class="results">
+                   <h2>{{prediction}}</h2> 
+                    </div>
                   
-                  <div id='analyst'></div>
-                  <div id='engineer'></div>
-                  <div id='scientist'></div>
-                </div>
-              </div>
+
+                </form>
+               </div> 
 
               <!-- </div> -->
             </li>
@@ -675,13 +213,13 @@
                 <h1>The Team</h1>
                 <div class="about--options">
                   <!-- <p>Contact us<br></p> -->
-                  <a href="#0">
+                  <a href="https://github.com/AsnaAkram">
                     <h3>Asna</h3>
                   </a>
                   <a href="https://github.com/cce24/">
                     <h3>Colin</h3>
                   </a>
-                  <a href="#0">
+                  <a href="https://github.com/heranmane">
                     <h3>Heran</h3>
                   </a>
                 </div>
@@ -692,7 +230,7 @@
                   <a href="https://github.com/nguyenkevn/">
                     <h3>Kevin</h3>
                   </a>
-                  <a href="#0">
+                  <a href="https://github.com/SavahnaArellano">
                     <h3>Savahna</h3>
                   </a>
                 </div>
@@ -707,7 +245,7 @@
       <li>Difference</li>
       <li>Salary</li>
       <li>Industry</li>
-      <li>Languages</li>
+      <li>Skills</li>
       <li>Word Globe</li>
       <li>The Team</li>
     </ul>

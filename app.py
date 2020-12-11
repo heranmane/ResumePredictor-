@@ -4,6 +4,29 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify, render_template
+from flask import (
+    Flask,
+    render_template,
+    jsonify,
+    request,
+    redirect)
+from string import digits
+import numpy as np
+import os
+import nltk
+import string
+from nltk.corpus import stopwords  
+from nltk.tokenize import word_tokenize  
+from sklearn.feature_extraction.text import TfidfVectorizer
+from collections import defaultdict
+from nltk.probability import FreqDist, DictionaryProbDist, ELEProbDist, sum_logs
+from nltk.classify.api import ClassifierI
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+# from input import naive_bayes
+
 
 postgres = 'williammdavis'
 password = 'FuzzyRug5x7'
@@ -25,6 +48,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def welcome():
+    # Load the data
+    
+    
     """List all available api routes."""
     return render_template("index.html")
 
@@ -36,23 +62,63 @@ def welcome():
     #     f"/Job_Type<br/>"
     # )
 
+@app.route("/predict", methods=["POST"])
 
-# @app.route("/indeed")
-# def indeed():
-#     # # Create our session (link) from Python to the DB
-#     # session = Session(engine)
+def predict():
+    csv = "./df.csv"
+    df = pd.read_csv(csv, encoding = 'unicode_escape')
+    df_sample = df.sample(frac = .1)
+    df3 = df_sample[['Job_Type', 'Description_and_Skill']]
+    df3 = df3.dropna()
 
-#     # Query all data
-#     results = pd.read_sql("SELECT * FROM indeed", conn)
+    #Function to clean text
+    def process_text(text):
+        nopunc = [char for char in text if char not in string.punctuation]
+        nopunc = ''.join(nopunc)
+        clean_words = [word for word in nopunc.split() if word.lower() not in stopwords.words('english')]
+        return clean_words
 
-#     P2 = results.to_dict(orient='records')
-#     # session.close()
+    #Actually tokenize
+    count_v  = CountVectorizer(analyzer=process_text)
+    message_bow = count_v.fit_transform(df3['Description_and_Skill'])
 
-#     # # Convert list of tuples into normal list
-#     # all_names = list(np.ravel(results))
+    #Split data into 80% training and 20% testing
+    X_train, X_test, y_train, y_test = train_test_split(message_bow, df3['Job_Type'],test_size=0.20, random_state=42)
 
-#     # return jsonify(all_names)
-#     return jsonify(P2)
+    #Create and train the naive bays classifier
+    classifier =  MultinomialNB().fit(X_train, y_train)
+
+    #Evaluate the model on the training dataset
+    classifier.predict(X_train)
+
+    
+    #User input information
+
+    if request.method == "POST":
+
+        message = request.form['message']
+        data = [message]
+        vect = count_v.transform(data)
+        my_prediction = classifier.predict(vect)
+
+    return render_template('index.html', prediction=f'Your job type is {my_prediction}')
+
+@app.route("/indeed")
+def indeed():
+    # # Create our session (link) from Python to the DB
+    # session = Session(engine)
+
+    # Query all data
+    results = pd.read_sql("SELECT * FROM indeed", conn)
+
+    P2 = results.to_dict(orient='records')
+    # session.close()
+
+    # # Convert list of tuples into normal list
+    # all_names = list(np.ravel(results))
+
+    # return jsonify(all_names)
+    return jsonify(P2)
 
 
 @app.route("/Job_Type")
