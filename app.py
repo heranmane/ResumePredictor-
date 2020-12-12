@@ -103,13 +103,13 @@ def predict():
 
     return render_template('index.html', prediction=f'Your job type is {my_prediction}')
 
-@app.route("/indeed")
+@app.route("/final")
 def indeed():
     # # Create our session (link) from Python to the DB
     # session = Session(engine)
 
     # Query all data
-    results = pd.read_sql("SELECT * FROM indeed", conn)
+    results = pd.read_sql("SELECT * FROM final", conn)
 
     P2 = results.to_dict(orient='records')
     # session.close()
