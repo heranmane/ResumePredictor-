@@ -322,7 +322,7 @@ d3.select("#submit_resumes").on("click", function () {
   console.log("click");
   // $(function () {
   // $('#submit_resumes').click(function () {
-  $(this).html('<img id="giffy" src = "../static/assets/img/pic3.gif">')
+  $(this).html('<img id="giffy" src = "../static/assets/img/giffy.gif">')
 
   // })
 })
