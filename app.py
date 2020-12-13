@@ -28,15 +28,14 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 import pickle
 # from input import naive_bayes
 
-# postgres = 'postgres'
-# password = ''
+postgres = 'williammdavis'
+password = 'FuzzyRug5x7'
 
 #################################################
 # Database Setup
 #################################################
-# engine = create_engine(
-#     f"postgres://{postgres}:{password}@localhost:5432/Project_2")
-# conn = engine.connect()
+engine = create_engine(f"postgres://pcmmmkwqxtqtom:a49dc8bb322c0f84b36c6e395c260182fd4c3d8310c0aab085374e22e34e4ab4@ec2-54-205-248-255.compute-1.amazonaws.com:5432/d6ks23dtmvo80e")
+conn = engine.connect()
 
 #################################################
 # Flask Setup
@@ -65,15 +64,11 @@ def welcome():
 @app.route("/predict", methods=["POST"])
 
 def predict():
-
-    url = 'https://raw.githubusercontent.com/heranmane/project2/master/df1.csv'
-    df = pd.read_csv(url,sep=",")
-
-# df.head()
     # Load the data
-    csv = "./df1.csv"
-    df = pd.read_csv(csv, encoding = 'unicode_escape')
-    df_sample = df.sample(frac = .1)
+    df = pd.read_sql("SELECT * FROM final", conn)
+    # csv = "./df1.csv"
+    # df = pd.read_csv(csv, encoding = 'unicode_escape')
+    df_sample = df.sample(frac = .05)
     df3 = df_sample[['Job_Type', 'Description_and_Skill']]
     df3 = df3.dropna()
 
@@ -118,11 +113,8 @@ def indeed():
     # session = Session(engine)
 
     # Query all data
-    url = 'https://raw.githubusercontent.com/heranmane/project2/master/df1.csv'
+    results = pd.read_sql("SELECT * FROM final", conn)
 
-    results = pd.read_csv(url,sep=",")
-   
-    # results = pd.read_csv("./df1.csv")
     P2 = results.to_dict(orient='records')
     # session.close()
 
@@ -139,15 +131,7 @@ def Job_Type():
     # session = Session(engine)
 
     # Query all data
-
-    url = 'https://raw.githubusercontent.com/heranmane/project2/master/Skill_By_Job_Type.csv'
-
-    results1 = pd.read_csv(url,sep=",")
-   
-    results = pd.read_csv("./df1.csv")
-    P2 = results.to_dict(orient='records')
-
-    results1 = pd.read_csv("./Skill_By_Job_Type.csv")
+    results1 = pd.read_sql("SELECT * FROM job_type", conn)
 
     Job_Type = results1.to_dict(orient='records')
 
@@ -169,17 +153,14 @@ def heran():
     # session = Session(engine)
 
     # Query all data
-    url = 'https://raw.githubusercontent.com/heranmane/project2/master/df1.csv'
-    results2 = pd.read_csv(url,sep=",")
-
-    # results2 = pd.read_csv("./df1.csv")
+    results2 = pd.read_sql("SELECT * FROM final", conn)
 
     heran = results2.to_dict(orient='records')
     # session.close()
 
-    csv = "./df.csv"
-    df = pd.read_csv(csv, encoding = 'unicode_escape')
-    heran = df.to_dict(orient='records')
+    # csv = "./df.csv"
+    # df = pd.read_csv(csv, encoding = 'unicode_escape')
+    # heran = df.to_dict(orient='records')
 
     # # Convert list of tuples into normal list
     # all_names = list(np.ravel(results))

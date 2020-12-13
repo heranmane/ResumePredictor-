@@ -1,6 +1,6 @@
 // var svg = d3.select('svg');
 // var svgContainer = d3.select('body');
-console.log("loading")
+// console.log("loading")
 
 var svgWidth = 800;
 var svgHeight = 450;
@@ -318,28 +318,26 @@ async function postData(url = '', data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
-
-
-d3.select("#submit_resumes").on("click",function(){
+d3.select("#submit_resumes").on("click", function () {
   console.log("click");
   // $(function () {
-    // $('#submit_resumes').click(function () {
-  $(this).html('<img id="giffy" src = "../static/assets/img/giphy.gif">') 
+  // $('#submit_resumes').click(function () {
+  $(this).html('<img id="giffy" src = "../static/assets/img/pic3.gif">')
 
   // })
 })
 
 
-  var resume_text = d3.select("#inputted_resume").property("value")
-  postData('/predict', { resume: resume_text }) //add flask route, instead of 42, would be text from input field ^
-    .then(prediction => {
-      
-      stored_response.innerHTML = prediction; // JSON data parsed by `x`
-      console.log("it works")
-      d3.select("#submit_resumes").remove()
-      // $(this).html('<img src = "../static/assets/img/pic3.gif">').hide()
+var resume_text = d3.select("#inputted_resume").property("value")
+postData('/predict', { resume: resume_text }) //add flask route, instead of 42, would be text from input field ^
+  .then(prediction => {
+
+    stored_response.innerHTML = prediction; // JSON data parsed by `x`
+    console.log("it works")
+    d3.select("#submit_resumes").remove()
+    // $(this).html('<img src = "../static/assets/img/pic3.gif">').hide()
 
   })
 // });
- 
-  var stored_response = document.getElementById("display_text");
+
+var stored_response = document.getElementById("display_text");
