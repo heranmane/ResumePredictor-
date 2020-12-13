@@ -50,5 +50,3 @@ var data = [{
     width: 500
   };
   Plotly.newPlot('myDiv', data, layout);
-
-  

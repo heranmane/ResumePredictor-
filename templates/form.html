@@ -47,7 +47,7 @@
 
             <div class="row">
                 <div class="col-md-6 ">
-                    <form method="POST" action="/send" role="form" , name="resume">
+                    <form method="POST" action="/predict" role="form" , name="resume">
                         <div class="form-group">
                             <!-- <label class="inputName">Resume</label> -->
                             <input type="text" class="text" name="resumeName" placeholder="Enter Your Resume Here">
@@ -58,12 +58,12 @@
                             <!-- <button type="submit" class="glow-on-hover" style=color:gold type="button" ;width:150px; -->
                                 <!-- height:40px; > -->
                                 <!-- submit</button> -->
-                            <output name="resumeName" class="card-text">{{prediction}}</output>
+                            <output name="resumeName" class="card-text">{{my_prediction}}</output>
                         </div>
                     </form>
                     <br>
                     <br>
-                    {{prediction_text}}
+                    {{my_prediction}}
 
                 </div>
 

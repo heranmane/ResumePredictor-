@@ -25,32 +25,32 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+import pickle
 # from input import naive_bayes
 
-
-postgres = 'williammdavis'
-password = 'FuzzyRug5x7'
+# postgres = 'postgres'
+# password = ''
 
 #################################################
 # Database Setup
 #################################################
-engine = create_engine(f"postgres://pcmmmkwqxtqtom:a49dc8bb322c0f84b36c6e395c260182fd4c3d8310c0aab085374e22e34e4ab4@ec2-54-205-248-255.compute-1.amazonaws.com:5432/d6ks23dtmvo80e")
-conn = engine.connect()
+# engine = create_engine(
+#     f"postgres://{postgres}:{password}@localhost:5432/Project_2")
+# conn = engine.connect()
 
 #################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
 
+# filename = 'workingclass'
+# loaded_model = pickle.load(open(filename, 'rb'))
 #################################################
 # Flask Routes
 #################################################
 
 @app.route("/")
 def welcome():
-    # Load the data
-    
-    
     """List all available api routes."""
     return render_template("index.html")
 
@@ -65,7 +65,8 @@ def welcome():
 @app.route("/predict", methods=["POST"])
 
 def predict():
-    csv = "./df.csv"
+    # Load the data
+    csv = "./df1.csv"
     df = pd.read_csv(csv, encoding = 'unicode_escape')
     df_sample = df.sample(frac = .1)
     df3 = df_sample[['Job_Type', 'Description_and_Skill']]
@@ -91,25 +92,28 @@ def predict():
     #Evaluate the model on the training dataset
     classifier.predict(X_train)
 
-    
+
+
     #User input information
 
     if request.method == "POST":
-
-        message = request.form['message']
+        message = request.data
+        # unpack the dictionary in heran.js using key resume
+        # message = request.form['message']
         data = [message]
         vect = count_v.transform(data)
         my_prediction = classifier.predict(vect)
+        my_prediction= str(my_prediction)
+        # prediction = f'Your ideal job type is {my_prediction}'
+    return jsonify(my_prediction)
 
-    return render_template('index.html', prediction=f'Your job type is {my_prediction}')
-
-@app.route("/final")
+@app.route("/indeed")
 def indeed():
     # # Create our session (link) from Python to the DB
     # session = Session(engine)
 
     # Query all data
-    results = pd.read_sql("SELECT * FROM final", conn)
+    results = pd.read_sql("SELECT * FROM indeed", conn)
 
     P2 = results.to_dict(orient='records')
     # session.close()
@@ -127,9 +131,13 @@ def Job_Type():
     # session = Session(engine)
 
     # Query all data
-    results1 = pd.read_sql("SELECT * FROM job_type", conn)
+    results1 = pd.read_csv("./Skill_By_Job_Type.csv")
 
     Job_Type = results1.to_dict(orient='records')
+
+    # csv = "./df.csv"
+    # df = pd.read_csv(csv, encoding = 'unicode_escape')
+    # Job_Type = df.to_dict(orient='records')
     # session.close()
 
     # # Convert list of tuples into normal list
@@ -145,10 +153,14 @@ def heran():
     # session = Session(engine)
 
     # Query all data
-    results2 = pd.read_sql("SELECT * FROM final", conn)
+    results2 = pd.read_csv("./df1.csv")
 
     heran = results2.to_dict(orient='records')
     # session.close()
+
+    # csv = "./df.csv"
+    # df = pd.read_csv(csv, encoding = 'unicode_escape')
+    # heran = df.to_dict(orient='records')
 
     # # Convert list of tuples into normal list
     # all_names = list(np.ravel(results))

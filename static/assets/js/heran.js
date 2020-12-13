@@ -1,6 +1,6 @@
 // var svg = d3.select('svg');
 // var svgContainer = d3.select('body');
-
+console.log("loading")
 
 var svgWidth = 800;
 var svgHeight = 450;
@@ -233,13 +233,13 @@ function changejobType(jobtype) {
 // ``````````````````````````PIE``````````````````````````
 var data = [{
   values: [13, 11.3, 8.3, 5.6, 3.9, 57.9],
-  labels: ['Consulting and Business Services', 'Internet and Software', 'Banks and Financial Services', 'Health Care',
+  labels: ['Consulting and Business Services', 'Internet and Softrware', 'Banks and Financial Services', 'Health Care',
     'Insurance', 'Other Industries'],
   type: 'pie',
   textinfo: "label+percent",
   textposition: "outside",
   automargin: true,
-  marker: { colors: ['rgb(242, 227, 146)','rgb(8, 103, 136)','rgb(219, 191, 27)','rgb(7, 160, 195)',  'rgb(237, 198, 91)','rgb(6, 88, 134)'],
+  marker: { colors: ['rgb(242, 227, 146)','rgb(3, 182, 252)','rgb(219, 191, 27)','rgb(7, 160, 195)',  'rgb(237, 198, 91)','rgb(6, 88, 134)'],
             width: [3,3,3,3,3,3] }
 }];
 var layout = {
@@ -273,7 +273,8 @@ function getData() {
   console.log(data)
 
   var layout = {
-    title: "'Bar' Chart",
+    xaxis: {title: 'Skills'},
+    yaxis: {title: 'Count'},
     height: 400,
     width: 700,
     paper_bgcolor: "#00000000",
@@ -296,5 +297,52 @@ d3.json("./Job_Type").then(function (importedData) {
 
 
 }).catch(function (error) {
-  console.log(error);
+  console.log(error)
 });
+
+async function postData(url = '', data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header (d3.select)
+  });
+  return response.json(); // parses JSON response into native JavaScript objects
+}
+
+var text = d3.select("#results")
+
+d3.select("#submit_resumes").on("click",function(){
+  console.log("click");
+  // $(function () {
+    // $('#submit_resumes').click(function () {
+  $(this).html('<img id="giffy" src = "../static/assets/img/giphy.gif">') 
+   text= $(this).html('< h2 id = "display_text" > Your Job is loading</h2 >')
+
+  })
+// })
+
+
+
+
+  var resume_text = d3.select("#inputted_resume").property("value")
+  postData('/predict', { resume: resume_text }) //add flask route, instead of 42, would be text from input field ^
+    .then(prediction => {
+      
+      stored_response.innerHTML = prediction; // JSON data parsed by `x`
+      console.log("it works")
+      d3.select("#submit_resumes").remove()
+      // $(this).html('<img src = "../static/assets/img/pic3.gif">').hide()
+
+  })
+// });
+ 
+  var stored_response = document.getElementById("display_text");
