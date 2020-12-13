@@ -1841,3 +1841,10 @@ body {
 #scientist {
   cursor: none;
 }
+.giffy{
+  height: 100p;
+  width: 100px
+}
+.submit_resumes{
+  border-color: transparent;
+}
