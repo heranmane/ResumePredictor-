@@ -323,11 +323,11 @@ async function postData(url = '', data = {}) {
 d3.select("#submit_resumes").on("click",function(){
   console.log("click");
   // $(function () {
-    // $('#submit_resumes').click(function () {
+    $('#submit_resumes').click(function () {
   $(this).html('<img id="giffy" src = "../static/assets/img/giphy.gif">') 
 
   })
-// })
+})
 
 
   var resume_text = d3.select("#inputted_resume").property("value")
