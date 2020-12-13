@@ -318,14 +318,14 @@ async function postData(url = '', data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
-var text = d3.select("#results")
+// var text = d3.select("#results")
 
 d3.select("#submit_resumes").on("click",function(){
   console.log("click");
   // $(function () {
     // $('#submit_resumes').click(function () {
   $(this).html('<img id="giffy" src = "../static/assets/img/giphy.gif">') 
-   text= $(this).html('< h2 id = "display_text" > Your Job is loading</h2 >')
+  //  text= $(this).html('< h2 id = "display_text" > Your Job is loading</h2 >')
 
   })
 // })
