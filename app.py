@@ -65,9 +65,15 @@ def welcome():
 @app.route("/predict", methods=["POST"])
 
 def predict():
+
+    url = 'https://raw.githubusercontent.com/heranmane/project2/master/./df1.csv'
+
+    df = pd.read_csv(url,sep=",")
+
+# df.head()
     # Load the data
-    csv = "./df1.csv"
-    df = pd.read_csv(csv, encoding = 'unicode_escape')
+    # csv = "./df1.csv"
+    # df = pd.read_csv(csv, encoding = 'unicode_escape')
     df_sample = df.sample(frac = .1)
     df3 = df_sample[['Job_Type', 'Description_and_Skill']]
     df3 = df3.dropna()
@@ -113,8 +119,11 @@ def indeed():
     # session = Session(engine)
 
     # Query all data
-    results = pd.read_sql("SELECT * FROM indeed", conn)
+    url = 'https://raw.githubusercontent.com/heranmane/project2/master/df1.csv'
 
+    results = pd.read_csv(url,sep=",")
+   
+    # results = pd.read_csv("./df1.csv")
     P2 = results.to_dict(orient='records')
     # session.close()
 
@@ -131,7 +140,15 @@ def Job_Type():
     # session = Session(engine)
 
     # Query all data
-    results1 = pd.read_csv("./Skill_By_Job_Type.csv")
+
+    url = 'https://raw.githubusercontent.com/heranmane/project2/master/Skill_By_Job_Type.csv'
+
+    results1 = pd.read_csv(url,sep=",")
+   
+    # results = pd.read_csv("./df1.csv")
+    # P2 = results.to_dict(orient='records')
+
+    # results1 = pd.read_csv("./Skill_By_Job_Type.csv")
 
     Job_Type = results1.to_dict(orient='records')
 
@@ -153,7 +170,10 @@ def heran():
     # session = Session(engine)
 
     # Query all data
-    results2 = pd.read_csv("./df1.csv")
+    url = 'https://raw.githubusercontent.com/heranmane/project2/master/df1.csv'
+    results2 = pd.read_csv(url,sep=",")
+
+    # results2 = pd.read_csv("./df1.csv")
 
     heran = results2.to_dict(orient='records')
     # session.close()
