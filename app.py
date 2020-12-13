@@ -144,7 +144,7 @@ def Job_Type():
     # Query all data
 
     # url = 'https://raw.githubusercontent.com/heranmane/project2/Skill_By_Job_Type.csv'
-    url = 'https://raw.githubusercontent.com/heranmane/IwanttoData/blob/master/Skill_By_Job_Type.csv'
+    url = 'https://raw.githubusercontent.com/heranmane/IwanttoData/master/Skill_By_Job_Type.csv'
 
     results1 = pd.read_csv(url,sep=",")
    
