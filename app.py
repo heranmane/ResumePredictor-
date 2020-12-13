@@ -71,8 +71,8 @@ def predict():
 
 # df.head()
     # Load the data
-    # csv = "./df1.csv"
-    # df = pd.read_csv(csv, encoding = 'unicode_escape')
+    csv = "./df1.csv"
+    df = pd.read_csv(csv, encoding = 'unicode_escape')
     df_sample = df.sample(frac = .1)
     df3 = df_sample[['Job_Type', 'Description_and_Skill']]
     df3 = df3.dropna()
@@ -144,10 +144,10 @@ def Job_Type():
 
     results1 = pd.read_csv(url,sep=",")
    
-    # results = pd.read_csv("./df1.csv")
-    # P2 = results.to_dict(orient='records')
+    results = pd.read_csv("./df1.csv")
+    P2 = results.to_dict(orient='records')
 
-    # results1 = pd.read_csv("./Skill_By_Job_Type.csv")
+    results1 = pd.read_csv("./Skill_By_Job_Type.csv")
 
     Job_Type = results1.to_dict(orient='records')
 
@@ -177,9 +177,9 @@ def heran():
     heran = results2.to_dict(orient='records')
     # session.close()
 
-    # csv = "./df.csv"
-    # df = pd.read_csv(csv, encoding = 'unicode_escape')
-    # heran = df.to_dict(orient='records')
+    csv = "./df.csv"
+    df = pd.read_csv(csv, encoding = 'unicode_escape')
+    heran = df.to_dict(orient='records')
 
     # # Convert list of tuples into normal list
     # all_names = list(np.ravel(results))
