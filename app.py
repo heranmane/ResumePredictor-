@@ -66,7 +66,9 @@ def welcome():
 
 def predict():
 
-    url = 'https://raw.githubusercontent.com/heranmane/project2/df1.csv'
+    # url = 'https://raw.githubusercontent.com/heranmane/project2/df1.csv'
+    url = 'https://raw.githubusercontent.com/heranmane/IwanttoData/master/df1.csv'
+    
 
     df = pd.read_csv(url,sep=",")
 
@@ -119,7 +121,7 @@ def indeed():
     # session = Session(engine)
 
     # Query all data
-    url = 'https://raw.githubusercontent.com/heranmane/project2/df1.csv'
+    url = 'https://raw.githubusercontent.com/heranmane/IwanttoData/master/df1.csv'
 
     results = pd.read_csv(url,sep=",")
    
@@ -141,7 +143,8 @@ def Job_Type():
 
     # Query all data
 
-    url = 'https://raw.githubusercontent.com/heranmane/project2/Skill_By_Job_Type.csv'
+    # url = 'https://raw.githubusercontent.com/heranmane/project2/Skill_By_Job_Type.csv'
+    url = 'https://github.com/heranmane/IwanttoData/blob/master/Skill_By_Job_Type.csv'
 
     results1 = pd.read_csv(url,sep=",")
    
@@ -170,7 +173,7 @@ def heran():
     # session = Session(engine)
 
     # Query all data
-    url = 'https://raw.githubusercontent.com/heranmane/project2/df1.csv'
+    url = 'https://raw.githubusercontent.com/heranmane/IwanttoData/master/df1.csv'
     results2 = pd.read_csv(url,sep=",")
 
     # results2 = pd.read_csv("./df1.csv")
