@@ -1,2 +1,5 @@
 wordnet
 stopwords
+word_tokenize 
+ClassifierI
+Classifier
