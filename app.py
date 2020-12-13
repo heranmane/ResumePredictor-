@@ -35,6 +35,7 @@ password = 'FuzzyRug5x7'
 # Database Setup
 #################################################
 engine = create_engine(f"postgres://pcmmmkwqxtqtom:a49dc8bb322c0f84b36c6e395c260182fd4c3d8310c0aab085374e22e34e4ab4@ec2-54-205-248-255.compute-1.amazonaws.com:5432/d6ks23dtmvo80e")
+
 conn = engine.connect()
 
 #################################################
