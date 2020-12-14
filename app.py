@@ -69,7 +69,7 @@ def predict():
     df = pd.read_sql("SELECT * FROM final", conn)
     # csv = "./df1.csv"
     # df = pd.read_csv(csv, encoding = 'unicode_escape')
-    df_sample = df.sample(frac = .03)
+    df_sample = df.sample(frac = .05)
     df3 = df_sample[['Job_Type', 'Description_and_Skill']]
     df3 = df3.dropna()
 
@@ -106,7 +106,7 @@ def predict():
         my_prediction = classifier.predict(vect)
         my_prediction= str(my_prediction)
         # prediction = f'Your ideal job type is {my_prediction}'
-    return jsonify(my_prediction)
+    return jsonify(f' The stars say you should apply to be a... {my_prediction}')
 
 @app.route("/indeed")
 def indeed():
