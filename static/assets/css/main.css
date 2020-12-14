@@ -1152,13 +1152,13 @@ body {
 .about--options > a:nth-child(3) {
   background-image: url("../img/heran.png");
 }
-.about--option > a:nth-child(1) {
+/* .about--option > a:nth-child(1) {
   background-image: url("../img/joel.png");
-}
-.about--option > a:nth-child(2) {
+} */
+.about--option > a:nth-child(1) {
   background-image: url("../img/Screen\ Shot\ 2020-11-02\ at\ 7.37.28\ PM.png");
 }
-.about--option > a:nth-child(3) {
+.about--option > a:nth-child(2) {
   background-image: url("../img/Capture.PNG");
 }
 .about--options > a:hover h3 {
@@ -1940,4 +1940,15 @@ position: relative
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+#display_text{
+
+   box-shadow: 0 0 10px rgba(30, 245, 249, 0.947);
+
+
+}
+#inputted_resume{
+  /* border-color: gold; */
+  border-color: gold;
+  box-shadow: gold;
 }
