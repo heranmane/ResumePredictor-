@@ -1841,11 +1841,8 @@ body {
 #scientist {
   cursor: none;
 }
-.giffy{
-  height: 100p;
-  width: 100px
-}
-.submit_resumes{
+
+#submit_resumes{
   border-color: transparent;
 
   min-width: 300px;
@@ -1868,14 +1865,13 @@ background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 10
   padding: 10px;
   }
 
-.submit_resumes::before {
+#submit_resumes::before {
 content: '';
-  border-radius: 1000px;
-  min-width: calc(300px + 12px);
-  min-height: calc(60px + 12px);
+   min-width: calc(300px + 12px);
+  /* min-height: calc(60px + 12px); */
   border: 6px solid #00FFCB;
   box-shadow: 0 0 60px rgba(0,255,203,.64);
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1883,21 +1879,21 @@ content: '';
   transition: all .3s ease-in-out 0s;
 }
 
-.submit_resumes:hover, .button:focus {
+#submit_resumes:hover, .button:focus {
   color: #313133;
   transform: translateY(-6px);
 }
 
-.submit_resumes:hover::before, button:focus::before {
+#submit_resumes:hover::before, button:focus::before {
   opacity: 1;
 }
 
-.submit_resumes::after {
+#submit_resumes::after {
   content: '';
-  width: 30px; height: 30px;
-  border-radius: 100%;
-  border: 6px solid #00FFCB;
-  position: absolute;
+  /* width: 30px; height: 30px; */
+  border-radius: 150px;
+  /* border: 6px solid #00FFCB; */
+  /* position: absolute; */
   z-index: -1;
   top: 50%;
   left: 50%;
@@ -1905,7 +1901,9 @@ content: '';
   animation: ring 1.5s infinite;
 }
 
-.submit_resumes:hover::after, button:focus::after {
+
+
+#submit_resumes:hover::after, button:focus::after {
   animation: none;
   display: none;
 }
@@ -1917,8 +1915,29 @@ content: '';
     opacity: 1;
   }
   100% {
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 600px;
     opacity: 0;
   }
+}
+
+#giffy{
+  height: 300px;
+  width:350px;
+  /* border-radius: 40%; */
+  margin-bottom:-40px; 
+  margin-left:-15px; 
+  margin-right:-40px;
+  /* float: left */
+margin-top: -75px;
+position: relative
+
+  /* border-; */
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

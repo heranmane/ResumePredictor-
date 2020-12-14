@@ -317,27 +317,49 @@ async function postData(url = '', data = {}) {
   });
   return response.json(); // parses JSON response into native JavaScript objects
 }
-
 d3.select("#submit_resumes").on("click", function () {
   console.log("click");
-  // $(function () {
-  // $('#submit_resumes').click(function () {
-  $(this).html('<img id="giffy" src = "../static/assets/img/giphy.gif">')
+  $('#giffy').show();
+  $("#display_text").hide();
+  var resume_text = d3.select("#inputted_resume").property("value")
 
-  // })
-})
+  postData('/predict', { resume: resume_text }) //add flask route, instead of 42, would be text from input field ^
+    .then(prediction => {
+      stored_response.innerHTML = prediction; // JSON data parsed by `x`
+      $('#giffy').hide();
+      $("#display_text").show();
+      console.log("it works")
+    })
+});
+var stored_response = document.getElementById("display_text")
 
 
-var resume_text = d3.select("#inputted_resume").property("value")
-postData('/predict', { resume: resume_text }) //add flask route, instead of 42, would be text from input field ^
-  .then(prediction => {
 
-    stored_response.innerHTML = prediction; // JSON data parsed by `x`
-    console.log("it works")
-    d3.select("#submit_resumes").remove()
-    // $(this).html('<img src = "../static/assets/img/pic3.gif">').hide()
 
-  })
-// });
 
-var stored_response = document.getElementById("display_text");
+
+
+// d3.select("#submit_resumes").on("click", function () {
+//   // console.log("click");
+//   // $(function postGif() {
+//   // $('#submit_resumes').click(function () {
+//   $(this).html('<img id="giffy" class= "center" src = "../static/assets/img/giphy.gif">')
+
+//   })
+// // })
+
+
+// var resume_text = d3.select("#inputted_resume").property("value")
+// postData('/predict', { resume: resume_text }) //add flask route, instead of 42, would be text from input field ^
+//   .then(prediction => {
+
+//     stored_response.innerHTML = prediction; // JSON data parsed by `x`
+//     console.log("it works")
+//     d3.select("#giffy").remove()
+//     d3.select("#submit_resumes").reset()
+//     // $(this).html('<img src = "../static/assets/img/pic3.gif">').hide()
+
+//   })
+// // });
+
+// var stored_response = document.getElementById("display_text");

@@ -219,20 +219,36 @@
             <li class="l-section section">
               <div class="hire">
                 <h1>Resume Analyzer</h1>
-                  <!-- FIND A WAY TO NO ACTION -->
-                  <!-- <form action="{{ url_for('predict')}}" method = "POST"> -->
-                  <textarea id="inputted_resume" name="message" placeholder="Copy and paste your resume here" rows="10" cols="100"
-                    required="required" style="background-color: transparent; border-color:white;"></textarea>
-                  <br></br>
-                  <br></br>
-                  <button id="submit_resumes" type="submit" class="btn btn-primary btn-block btn-large" style="background-color:transparent; border-color:white; margin-top: 20px;";>Predict</button>
-                  <!-- Bring the button into heran.js . ONCLICK-->
-                  <!-- <div class="results"> -->
-                    <h2 id="display_text">Text</h2> 
-                    <!-- Use javascript to add the prediction into the div. -->
-                  <!-- </div> -->
-              </div>
+                <!-- FIND A WAY TO NO ACTION -->
+                <!-- <form action="{{ url_for('predict')}}" method = "POST"> -->
+                <textarea id="inputted_resume" name="message" placeholder="Copy and paste your resume here" rows="10"
+                  cols="100" required="required" style="background-color: transparent; border-color:white;"></textarea>
+                <br></br>
+                <!-- <br></br>  -->
+                <!-- <div class="results"> -->
+                <!-- <h2 id="display_text"></h2> -->
+                <!-- </div> -->
+                <!-- <button id="submit_resumes" type="submit" class="btn btn-primary btn-block btn-large"
+                  style="background-color:transparent; border-color:white; margin-top: 20px;" >Predict</button> -->
+                <!-- Bring the button into heran.js . ONCLICK-->
+                <!-- <img id="giffy" onclick = "postGif(this)"> -->
 
+                <!-- Use javascript to add the prediction into the div. -->
+                <!-- </div>
+        </div> -->
+                <div class="results">
+                  <h2 id="display_text"></h2>
+                </div>
+
+                <button id="submit_resumes" type="submit" class="btn btn-primary btn-block btn-large"
+                  style="background-color:transparent; border-color:white; margin-top: 20px;" ;>Predict</button>
+                <!-- Bring the button into heran.js . ONCLICK-->
+                <div class="results">
+                  <!-- <h2 id="display_text"></h2> -->
+                  <img id="giffy" style="display:none" src="../static/assets/img/giphy.gif">
+                  <!-- Use javascript to add the prediction into the div. -->
+                </div>
+              </div>
               <!-- </div> -->
             </li>
             <li class="l-section section">
