@@ -69,7 +69,7 @@ def predict():
     df = pd.read_sql("SELECT * FROM final", conn)
     # csv = "./df1.csv"
     # df = pd.read_csv(csv, encoding = 'unicode_escape')
-    df_sample = df.sample(frac = .03)
+    df_sample = df.sample(frac = .01)
     df3 = df_sample[['Job_Type', 'Description_and_Skill']]
     df3 = df3.dropna()
 
